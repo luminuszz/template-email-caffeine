@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  @font-face {
+    font-family: 'nexa-text';
+    src: url('../fonts/FontfabricNexaTextBook.otf');
+  }
+
+  @font-face {
+    font-family: 'nexa-heavy';
+    src: url('../fonts/FontfabricNexaHeavy.otf.otf');
+  }
+
+  @font-face {
+    font-family: 'nexa-bold';
+    src: url('../fonts/FontfabricNexaTextExtraBold.otf');
+  }
+
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  :root {
+    --background: #fff;
+    --color-primary: #2D1408;
+    --color-secondary: #F8EDD6;
+    --gradient: transparent linear-gradient(270deg, #E4CA7F 0%, #E5BD60 100%) 0% 0% no-repeat padding-box;
+    --font-primary: "nexa-text";
+    --font-secondary: "nexa-heavy";
+    --font-terceary: "nexa-bold";
+
+  }
+
+
+
+  body {
+    background-color: aliceblue;
+    height: 100%;
+
+  }
+
+
+  .mail-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+
+  .content-email {
+    background-color: #fff;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 45px;
+  }
+
+  .banner img {
+    max-width: 100%;
+    width: 100%;
+
+
+  }
+
+
+
+  .content-email .message {
+    margin-top: 15px;
+
+  }
+
+  .content-email .message .title strong,
+  span {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    font-weight: bold;
+  }
+
+  .content-email .message .subtitle {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    font-weight: bold;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-top: 10px;
+    font-family: var(--font-primary);
+
+  }
+
+  .content:nth-child(1) {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .table {
+
+    width: 100%;
+    background-color: var(--color-secondary);
+    margin: 12px 0;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+  }
+
+  .table .content-table {
+    padding: 10px 18px;
+  }
+
+  .table .title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    padding: 14px 16px 9px;
+    font-family: var(--font-terceary);
+
+    border-bottom: 1px solid var(--color-primary);
+
+  }
+
+  .table .content-table {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+  }
+
+  .table .content-table .address {
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    border-right: 1px solid #A5958E;
+    padding-right: 23px;
+
+  }
+
+  .table .content-table .address strong {
+    font-family: var(--font-terceary);
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 9px 0;
+
+  }
+
+  .table .content-table .freight {
+    width: 198px;
+    height: 46px;
+    display: flex;
+    margin-left: 13px;
+    font-size: 1.6rem;
+    font-family: var(--font-primary);
+
+  }
+
+
+
+  .box p {
+    margin: 16px 0;
+
+    width: 100%;
+
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .img {
+    max-width: 509px;
+    width: 100%;
+    height: 84px;
+    background-color: var(--color-secondary);
+
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 36px;
+
+  }
+
+  .button a {
+    max-width: 187px;
+    font-size: 1.6rem;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: var(--gradient);
+    color: #ffff;
+    text-transform: uppercase;
+    font-family: var(--font-terceary);
+    border-radius: 5px;
+    box-shadow: 0px 3px 3px #00000014;
+
+  }
+
+  .social {
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .social img {
+
+    width: 100%;
+    height: auto;
+
+
+  }
+
+  .social img:last-child {
+    margin-left: 20px;
+  }
+
+  .footer {
+    max-width: 600px;
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-secondary);
+
+  }
+
+  .footer p {
+    font-size: 1.0rem;
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+
+  }
+
+  .footer p a {
+    font-size: 1.0rem;
+    font-family: var(--font-primary);
+    color: var(--color-primary);
+
+
+  }
+
+  @media(max-width: 427px) {
+    body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    html {
+      font-size: 68%;
+
+    }
+
+    .mail-container {
+      max-width: 100%;
+      width: 100%;
+    }
+
+
+    .content-email {
+      padding: 0 10px;
+      max-width: 100%;
+    }
+
+    .button a {
+      font-size: 16px;
+    }
+
+    .content-table {
+      flex-direction: column;
+    }
+
+    .table .content-table .freight {
+
+      height: 100%;
+      margin-top: 13px;
+      width: 210px;
+      margin-left: 0;
+
+    }
+
+    .address:first-child {
+      padding-bottom: 9px;
+    }
+
+    .address:last-child {
+      margin-top: 13px;
+    }
+
+    .content-table .address {
+      border-right: none !important;
+      margin-left: 0 !important;
+      border-bottom: 1px solid #A5958E;
+    }
+
+    .social {
+      flex-direction: column;
+    }
+
+    .social img {
+      width: 176px;
+      height: 47px;
+    }
+
+    .social img:last-child {
+      margin-left: 0;
+    }
+
+  }
+
+</style>
+
+<body>
+  <div class="mail-container">
+    <div class="banner">
+      <img src="../assets/Prancheta4.png" alt="">
+
+    </div>
+
+    <div class="content-email">
+
+
+
+
+      <div class="message">
+        <div class="title">
+          <strong>Obrigado, <span>TESTE</span> </strong>
+          <img src="" alt="">
+        </div>
+
+        <div class="subtitle">
+          Recebemos seu pedido número 54564564
+        </div>
+
+        <div class="content">
+
+
+          <p>O seu pedido está confirmado e ficaremos de olho por aqui.
+            Vamos enviar uma nova mensagem assim que o seu pagamento por aprovado, tudo bem?</p>
+
+          <p> Vale lembrar que o prazo de entrega
+            começa a contar a partir da confirmação do pagamento. Iremos te notificar quando ocorrer!</p>
+
+          <p> O seu pedido será entregue
+            no endereço abaixo:
+          </p>
+
+        </div>
+
+        <div class="table">
+
+          <div class="title">
+            Informações da entrega
+          </div>
+
+
+          <div class="content-table">
+
+            <div class="address">
+
+
+              <strong>Endereço de entrega</strong>
+
+              <p>Tércio TESTE</p>
+              <p>Rua Tenente Valmir Alcântara,</p>
+              <p>352</p>
+              <p>Cabula</p>
+              <p>Salvador</p>
+              <p>BA</p>
+              <p>41150520</p>
+
+            </div>
+            <div class="freight">
+              *Frete via Total express. Prazo de entrega: 10 dias
+            </div>
+          </div>
+
+        </div>
+
+        <div class="box">
+          <p> Caso seja necessário trocar o local de entrega ou alguma informação, pedimos que entre em contato o mais
+            rápido
+            possível com o e-mail contato@caffeinearmy.com.br , pois quaisquer alterações só poderão ser realizadas
+            antes
+            da
+            emissão da sua nota fiscal. Mudanças no endereço após a emissão da nota estarão sujeitas a cobrança.</p>
+        </div>
+
+        <div class="img">
+
+        </div>
+      </div>
+
+
+
+      <div class="table">
+
+        <div class="title">
+          Informações do pedido
+        </div>
+
+
+        <div class="content-table">
+
+          <div class="address">
+
+
+            <strong>Endereço de cobrança</strong>
+
+            <p>Tércio TESTE</p>
+            <p>Rua Tenente Valmir Alcântara,</p>
+            <p>352</p>
+            <p>Cabula</p>
+            <p>Salvador</p>
+            <p>BA</p>
+            <p>41150520</p>
+
+          </div>
+
+          <div class="address" style="border: none; margin-left: 13px;">
+
+
+            <strong>Detalhes da compra</strong>
+
+            <p>Produto: SUPERCOFFEE</p>
+            <p> Quantidade: 1 </p>
+            <p> Preço: R$  107,60 </p>
+            <p> Subtotal: R$  107,60</p>
+            <p> Frete: R$ - -</p>
+            <p> Total: R$  107,60</p>
+            <p> Pagamento: Cartão de credito</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="box">
+        <p>
+          Não hesite em falar com a gente sempre que precisar de alguma informação sobre os nossos produtos.
+
+        </p>
+        <p> contato@caffeinearmy.com </p>
+        <p>(11) 93365-3940</p>
+      </div>
+
+      <div class="social">
+        <img src="../assets/Grupo90.png" alt="">
+        <img src="../assets/Grupo91.png" alt="">
+        <img src="../assets/Grupo88.png" alt="">
+      </div>
+
+
+    </div>
+
+    <div class="footer">
+
+
+      <p> Enviado por Caffeine Army</p>
+      <p> Rua Ciufuli Zanfelice,260-Lapa. São Paulo-SP. CEP 05040-000, Brasil.</p>
+      <p>Se deseja não receber
+        mais mensagens como essa <a href="#">clique aqui</a>.</p>
+
+    </div>
+
+
+
+
+  </div>
+
+</body>
+
+</html>
